@@ -1,0 +1,24 @@
+[submodule "linux/scripts"]
+	path = linux/scripts
+	url = https://github.com/pfsmorigo/scripts
+	branch = master
+[submodule "linux/dotfiles"]
+	path = linux/dotfiles
+	url = https://github.com/pfsmorigo/dotfiles
+	branch = master
+[submodule "linux/3rdparty/i3"]
+	path = linux/3rdparty/i3
+	url = https://github.com/pfsmorigo/i3.git
+	branch = pfsmorigo
+[submodule "linux/3rdparty/i3blocks"]
+	path = linux/3rdparty/i3blocks
+	url = https://github.com/pfsmorigo/i3blocks.git
+	branch = pfsmorigo
+[submodule "linux/3rdparty/rxvt-unicode"]
+	path = linux/3rdparty/rxvt-unicode
+	url = https://github.com/pfsmorigo/rxvt-unicode.git
+	branch = pfsmorigo
+[submodule "linux/3rdparty/rofi"]
+	path = linux/3rdparty/rofi
+	url = https://github.com/pfsmorigo/rofi.git
+	branch = pfsmorigo
