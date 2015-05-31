@@ -1,0 +1,36 @@
+#!/bin/bash -x
+
+WGET="wget -c -P downloads"
+
+install_rpms() {
+	$WGET https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+	$WGET http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+	$WGET http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+	$WGET https://www.dropbox.com/download?dl=packages/fedora/nautilus-dropbox-1.6.2-1.fedora.x86_64.rpm
+	sudo yum localinstall downloads/*.rpm
+}
+
+install_packages() {
+	sudo yum install $(grep -v '^$\|^\s*\#' package_list | sort)
+}
+
+update_system() {
+	sudo yum update
+}
+
+case $1 in
+	update_system|install_packages|install_rpms)
+		$1
+		;;
+
+	'')
+		install_rpms
+		install_packages
+		update_system
+		;;
+
+	*)
+		echo "wat?"
+		exit 1
+		;;
+esac

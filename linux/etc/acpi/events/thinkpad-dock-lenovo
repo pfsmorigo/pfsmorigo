@@ -1,0 +1,2 @@
+event=ibm/hotkey LEN0068:00 00000080 00004010
+action=su pfsmorigo -c "sleep 2; /home/pfsmorigo/.local/bin/computer profile pocos-office"
